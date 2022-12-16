@@ -1,0 +1,476 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2706
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\froman\fcharset0 Times-Bold;\f2\froman\fcharset0 Times-Roman;
+\f3\fmodern\fcharset0 Courier-Bold;\f4\fmodern\fcharset0 Courier;\f5\fmodern\fcharset0 Courier-BoldOblique;
+\f6\fmodern\fcharset0 Courier-Oblique;}
+{\colortbl;\red255\green255\blue255;\red16\green60\blue192;\red0\green0\blue109;\red20\green51\blue149;
+\red83\green118\blue172;\red0\green0\blue254;\red109\green109\blue109;\red109\green109\blue109;\red0\green0\blue109;
+\red20\green51\blue149;\red83\green118\blue172;\red0\green0\blue254;}
+{\*\expandedcolortbl;;\cssrgb\c6667\c33333\c80000;\csgenericrgb\c0\c0\c42745;\csgenericrgb\c7843\c20000\c58431;
+\csgenericrgb\c32549\c46275\c67451;\csgenericrgb\c0\c0\c99608;\csgenericrgb\c42745\c42745\c42745;\csgenericrgb\c42745\c42745\c42745;\csgenericrgb\c0\c0\c42745;
+\csgenericrgb\c7843\c20000\c58431;\csgenericrgb\c32549\c46275\c67451;\csgenericrgb\c0\c0\c99608;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sa160\partightenfactor0
+
+\f0\fs53\fsmilli26667 \cf0 \expnd0\expndtw0\kerning0
+Task 1
+\f1\b\fs48 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b0\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs29\fsmilli14667 \cf0 Open below application
+\f2\fs24 \
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"}}{\fldrslt 
+\f0\fs29\fsmilli14667 \cf2 \ul \ulc2 https://opensource-demo.orangehrmlive.com/web/index.php/auth/login}}\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs29\fsmilli14667 \cf0 Capture the application url and verify url ends with \'93login\'94
+\f2\fs24 \
+\
+
+\f0\fs29\fsmilli14667 Capture the application url and verify url contains \'93demo\'94
+\f2\fs24 \
+\
+
+\f0\fs29\fsmilli14667 Capture the application title and verify title contains HRM \
+\
+\
+Answer - \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+
+\f3\b\fs26 \cf3 \kerning1\expnd0\expndtw0 package 
+\f4\b0 \cf0 SeleniumSession;\
+\
+
+\f3\b \cf3 import 
+\f4\b0 \cf0 org.openqa.selenium.WebDriver;\
+
+\f3\b \cf3 import 
+\f4\b0 \cf0 org.openqa.selenium.firefox.FirefoxDriver;\
+\
+
+\f3\b \cf3 public class 
+\f4\b0 \cf0 Ex \{\
+        
+\f3\b \cf3 public static void 
+\f4\b0 \cf0 main(String [] args) 
+\f3\b \cf3 throws 
+\f4\b0 \cf0 InterruptedException \{\
+            System.
+\f5\i\b \cf4 out
+\f4\i0\b0 \cf0 .println(
+\f3\b \cf5 "Create account for facebook"
+\f4\b0 \cf0 );\
+            System.
+\f6\i setProperty
+\f4\i0 (
+\f3\b \cf5 "webdriver.gecko.driver"
+\f4\b0 \cf0 , 
+\f3\b \cf5 "/Users/mishrasaurav/Desktop/Saurav Mishra/Selenium_Project/Jars/geckodriver"
+\f4\b0 \cf0 );\
+            WebDriver driver = 
+\f3\b \cf3 new 
+\f4\b0 \cf0 FirefoxDriver();\
+            driver.manage().deleteAllCookies();\
+            driver.get(
+\f3\b \cf5 "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
+\f4\b0 \cf0 );\
+            Thread.
+\f6\i sleep
+\f4\i0 (\cf6 2000\cf0 );\
+            driver.manage().window().maximize();\
+            Thread.
+\f6\i sleep
+\f4\i0 (\cf6 3000\cf0 );\
+            
+\f3\b \cf3 if
+\f4\b0 \cf0 (driver.getCurrentUrl().endsWith(
+\f3\b \cf5 "login"
+\f4\b0 \cf0 ))\{\
+                System.
+\f5\i\b \cf4 out
+\f4\i0\b0 \cf0 .println(
+\f3\b \cf5 "First Assertion Is True"
+\f4\b0 \cf0 );\
+            \}\
+            
+\f3\b \cf3 else
+\f4\b0 \cf0 \{\
+                System.
+\f5\i\b \cf4 out
+\f4\i0\b0 \cf0 .println(
+\f3\b \cf5 "First Assertion Is False"
+\f4\b0 \cf0 );\
+            \}\
+            
+\f3\b \cf3 if
+\f4\b0 \cf0 (driver.getCurrentUrl().contains(
+\f3\b \cf5 "demo"
+\f4\b0 \cf0 ))\{\
+                System.
+\f5\i\b \cf4 out
+\f4\i0\b0 \cf0 .println(
+\f3\b \cf5 "Second Assertion Is True"
+\f4\b0 \cf0 );\
+            \}\
+            
+\f3\b \cf3 else
+\f4\b0 \cf0 \{\
+                System.
+\f5\i\b \cf4 out
+\f4\i0\b0 \cf0 .println(
+\f3\b \cf5 "Second Assertion Is False"
+\f4\b0 \cf0 );\
+            \}\
+            
+\f3\b \cf3 if
+\f4\b0 \cf0 (driver.getCurrentUrl().contains(
+\f3\b \cf5 "HRM"
+\f4\b0 \cf0 ))\{\
+                System.
+\f5\i\b \cf4 out
+\f4\i0\b0 \cf0 .println(
+\f3\b \cf5 "Third Assertion Is True"
+\f4\b0 \cf0 );\
+            \}\
+            
+\f3\b \cf3 else
+\f4\b0 \cf0 \{\
+                System.
+\f5\i\b \cf4 out
+\f4\i0\b0 \cf0 .println(
+\f3\b \cf5 "Third Assertion Is False"
+\f4\b0 \cf0 );\
+            \}\
+        \}\
+        \
+\}\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa160\partightenfactor0
+
+\f0\fs53\fsmilli26667 \cf0 Task 2
+\f1\b\fs48 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b0\fs29\fsmilli14667 \cf0 Open below application and verify logo is present or not
+\f2\fs24 \
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"}}{\fldrslt 
+\f0\fs29\fsmilli14667 \cf2 \ul \ulc2 https://opensource-demo.orangehrmlive.com/web/index.php/auth/login}}\
+\
+\
+Answer - \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+
+\f3\b\fs26 \cf3 \kerning1\expnd0\expndtw0 Package 
+\f4\b0 \cf0 SeleniumSession;
+\f3\b \cf3 \
+
+\f4\b0 \cf0 \
+
+\f3\b \cf3 import 
+\f4\b0 \cf0 org.openqa.selenium.By;\
+
+\f3\b \cf3 import 
+\f4\b0 \cf0 org.openqa.selenium.JavascriptExecutor;\
+
+\f3\b \cf3 import 
+\f4\b0 \cf0 org.openqa.selenium.WebDriver;\
+
+\f3\b \cf3 import 
+\f4\b0 \cf0 org.openqa.selenium.WebElement;\
+
+\f3\b \cf3 import 
+\f4\b0 \cf0 org.openqa.selenium.firefox.FirefoxDriver;
+\f3\b \cf3 \
+
+\f4\b0 \cf0 \
+
+\f3\b \cf3 public class 
+\f4\b0 \cf0 Task2 \{\
+    
+\f3\b \cf3 public static void 
+\f4\b0 \cf0 main(String[] args) 
+\f3\b \cf3 throws 
+\f4\b0 \cf0 InterruptedException \{\
+        System.
+\f5\i\b \cf4 out
+\f4\i0\b0 \cf0 .println(
+\f3\b \cf5 "Check the logo is present or not "
+\f4\b0 \cf0 );\
+        System.
+\f6\i setProperty
+\f4\i0 (
+\f3\b \cf5 "webdriver.gecko.driver"
+\f4\b0 \cf0 , 
+\f3\b \cf5 "/Users/mishrasaurav/Desktop/Saurav Mishra/Selenium_Project/Jars/geckodriver"
+\f4\b0 \cf0 );\
+        WebDriver driver = 
+\f3\b \cf3 new 
+\f4\b0 \cf0 FirefoxDriver();\
+        driver.manage().deleteAllCookies();\
+        driver.get(
+\f3\b \cf5 "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
+\f4\b0 \cf0 );\
+        Thread.
+\f6\i sleep
+\f4\i0 (\cf6 2000\cf0 );\
+        driver.manage().window().maximize();\
+\
+        
+\f6\i \cf7 //Identify image using xpath\
+        
+\f4\i0 \cf0 WebElement L = driver.findElement(By.
+\f6\i xpath
+\f4\i0 (
+\f3\b \cf5 "//img[@alt='orangehrm-logo']"
+\f4\b0 \cf0 ));\
+\
+        
+\f6\i \cf7 // Javascript executor to check image\
+        
+\f4\i0 \cf0 Boolean p = (Boolean) ((JavascriptExecutor)driver) .executeScript(
+\f3\b \cf5 "return arguments[0].complete " 
+\f4\b0 \cf0 + 
+\f3\b \cf5 "&& typeof arguments[0].naturalWidth != \cf3 \\"\cf5 undefined\cf3 \\"\cf5  " 
+\f4\b0 \cf0 + 
+\f3\b \cf5 "&& arguments[0].naturalWidth > 0"
+\f4\b0 \cf0 , L);\
+\
+        
+\f6\i \cf7 //verify if status is true\
+        
+\f3\i0\b \cf3 if 
+\f4\b0 \cf0 (p) \{\
+            System.
+\f5\i\b \cf4 out
+\f4\i0\b0 \cf0 .println(
+\f3\b \cf5 "Logo present"
+\f4\b0 \cf0 );\
+        \} 
+\f3\b \cf3 else 
+\f4\b0 \cf0 \{\
+            System.
+\f5\i\b \cf4 out
+\f4\i0\b0 \cf0 .println(
+\f3\b \cf5 "Logo not present"
+\f4\b0 \cf0 );\
+        \}\
+        driver.quit();\
+    \}\
+\}\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+
+\f3\b\fs48 \cf0 TASK 3 
+\f4\b0\fs26 \
+Q) 
+\f6\i\fs29 \cf7 Open below application url and verify that footer has 4 social media icons\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+
+\f4\i0\fs26 \cf0 \
+Answer :\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+
+\f3\b\fs29 \cf3 package 
+\f4\b0 \cf0 SeleniumSession;\
+\
+
+\f3\b \cf3 import 
+\f4\b0 \cf0 com.google.common.util.concurrent.ListeningScheduledExecutorService;\
+
+\f3\b \cf3 import 
+\f4\b0 \cf0 org.openqa.selenium.By;\
+
+\f3\b \cf3 import 
+\f4\b0 \cf0 org.openqa.selenium.WebDriver;\
+
+\f3\b \cf3 import 
+\f4\b0 \cf0 org.openqa.selenium.WebElement;\
+
+\f3\b \cf3 import 
+\f4\b0 \cf0 org.openqa.selenium.firefox.FirefoxDriver;\
+\
+
+\f3\b \cf3 import 
+\f4\b0 \cf0 java.util.List;\
+\
+
+\f3\b \cf3 public class 
+\f4\b0 \cf0 Task3 \{\
+    
+\f3\b \cf3 public static void 
+\f4\b0 \cf0 main(String[] args) 
+\f3\b \cf3 throws 
+\f4\b0 \cf0 InterruptedException \{\
+        System.
+\f5\i\b \cf4 out
+\f4\i0\b0 \cf0 .println(
+\f3\b \cf5 "Check the logo is present or not "
+\f4\b0 \cf0 );\
+        System.
+\f6\i setProperty
+\f4\i0 (
+\f3\b \cf5 "webdriver.gecko.driver"
+\f4\b0 \cf0 , 
+\f3\b \cf5 "/Users/mishrasaurav/Desktop/Saurav Mishra/Selenium_Project/Jars/geckodriver"
+\f4\b0 \cf0 );\
+        WebDriver driver = 
+\f3\b \cf3 new 
+\f4\b0 \cf0 FirefoxDriver();\
+        driver.manage().deleteAllCookies();\
+        driver.get(
+\f3\b \cf5 "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
+\f4\b0 \cf0 );\
+        Thread.
+\f6\i sleep
+\f4\i0 (\cf6 2000\cf0 );\
+        driver.manage().window().maximize();\
+        WebElement F = driver.findElement(By.
+\f6\i xpath
+\f4\i0 (
+\f3\b \cf5 "//div[@class='orangehrm-login-footer']"
+\f4\b0 \cf0 ));\
+        List<WebElement> socialMediaElements = driver.findElements(By.
+\f6\i xpath
+\f4\i0 (
+\f3\b \cf5 "//*[local-name()='svg']"
+\f4\b0 \cf0 )); 
+\f6\i \cf7 // multiple elements \
+        
+\f3\i0\b \cf3 if 
+\f4\b0 \cf0 (socialMediaElements.size()==\cf6 4\cf0 ) \{\
+            System.
+\f5\i\b \cf4 out
+\f4\i0\b0 \cf0 .println(
+\f3\b \cf5 "the Footer has 4 social media icon"
+\f4\b0 \cf0 );\
+        \} 
+\f3\b \cf3 else 
+\f4\b0 \cf0 \{\
+            System.
+\f5\i\b \cf4 out
+\f4\i0\b0 \cf0 .println(
+\f3\b \cf5 "the footer has no social media icon"
+\f4\b0 \cf0 );\
+        \}\
+        driver.quit();\
+    \}\
+\}\
+\pard\pardeftab720\sa160\partightenfactor0
+
+\f0\fs53\fsmilli26667 \cf0 \expnd0\expndtw0\kerning0
+\
+TASK 4 
+\f4\fs29 \kerning1\expnd0\expndtw0  \
+
+\f6\i\fs39 \cf8 verify the capture all href values from social media icons
+\f0\i0\fs53\fsmilli26667 \cf0 \expnd0\expndtw0\kerning0
+\
+Answer-\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f3\b\fs39 \cf9 \kerning1\expnd0\expndtw0 package 
+\f4\b0 \cf0 SeleniumSession;\
+
+\f3\b \cf9 import 
+\f4\b0 \cf0 org.openqa.selenium.By;\
+
+\f3\b \cf9 import 
+\f4\b0 \cf0 org.openqa.selenium.WebDriver;\
+
+\f3\b \cf9 import 
+\f4\b0 \cf0 org.openqa.selenium.WebElement;\
+
+\f3\b \cf9 import 
+\f4\b0 \cf0 org.openqa.selenium.firefox.FirefoxDriver;\
+
+\f3\b \cf9 import 
+\f4\b0 \cf0 java.util.List;\
+
+\f3\b \cf9 public class 
+\f4\b0 \cf0 Task4 \{\
+    
+\f3\b \cf9 public static void 
+\f4\b0 \cf0 main(String[] args) 
+\f3\b \cf9 throws 
+\f4\b0 \cf0 InterruptedException \{\
+        System.
+\f5\i\b \cf10 out
+\f4\i0\b0 \cf0 .println(
+\f3\b \cf11 "Check the logo is present or not "
+\f4\b0 \cf0 );\
+        System.
+\f6\i setProperty
+\f4\i0 (
+\f3\b \cf11 "webdriver.gecko.driver"
+\f4\b0 \cf0 , 
+\f3\b \cf11 "/Users/mishrasaurav/Desktop/Saurav Mishra/Selenium_Project/Jars/geckodriver"
+\f4\b0 \cf0 );\
+        WebDriver driver = 
+\f3\b \cf9 new 
+\f4\b0 \cf0 FirefoxDriver();\
+        driver.manage().deleteAllCookies();\
+        driver.get(
+\f3\b \cf11 "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
+\f4\b0 \cf0 );\
+        Thread.
+\f6\i sleep
+\f4\i0 (\cf12 2000\cf0 );\
+        driver.manage().window().maximize();\
+        List<WebElement> socialMediaElements = driver.findElements(By.
+\f6\i xpath
+\f4\i0 (
+\f3\b \cf11 "//div[@class='orangehrm-login-footer']/div/a"
+\f4\b0 \cf0 ));\
+        System.
+\f5\i\b \cf10 out
+\f4\i0\b0 \cf0 .println(
+\f3\b \cf11 "Number of Links for social media is " 
+\f4\b0 \cf0 + socialMediaElements.size());\
+        
+\f3\b \cf9 for 
+\f4\b0 \cf0 (
+\f3\b \cf9 int 
+\f4\b0 \cf0 i = \cf12 0\cf0 ;i<socialMediaElements.size();i++) \{\
+            
+\f3\b \cf9 if
+\f4\b0 \cf0 (i==\cf12 4\cf0 )\{\
+                
+\f3\b \cf9 break
+\f4\b0 \cf0 ;\
+            \}\
+            System.
+\f5\i\b \cf10 out
+\f4\i0\b0 \cf0 .println(
+\f3\b \cf11 "Name of Link" 
+\f4\b0 \cf0 + i + socialMediaElements.get(i).getAttribute(
+\f3\b \cf11 "href"
+\f4\b0 \cf0 ).toString());\
+        \}\
+    \}\
+\}
+\f0\fs53\fsmilli26667 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa160\partightenfactor0
+\cf0 \
+TASK 5\
+Answer- \
+
+\f4\fs39 \kerning1\expnd0\expndtw0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+}
